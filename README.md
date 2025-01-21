@@ -13,11 +13,10 @@ Within the HTML file "Index_JW", we pull in multiple references/libraries using 
 - Supporting Javascript file using <script src=>: local drive file appJW.js
 
 
-Within Javascript, we start by selecting the dataset (samples.json) and creating three functions that will be called to later in the code to create the dropdown menu and two supporting charts. The first, which will be called last, is the startDashboard function, which launches the interactive dashboard on HTML with a set sampleID to appear when the site is first opened. 
+Within Javascript, we start by selecting the dataset (samples.json) and **creating four functions** that will be called to later in the code when the site is loaded to create the dropdown menu and two supporting charts. The first, which will be called last, is the startDashboard function, which launches the interactive dashboard on HTML with a set sampleID to appear when the site is first opened. 
 The function startDashboard iterates through each row of the JSON file and appends the value of each sampleID to the dropdown menu. 
 
-Next, we work on the function for the charts in the dataset. Using Plotly and D3, we create a Bar Chart which details the number of each bacteria found in a given sample. Using the slice function, we order the top 10 bacteria types in descending order along the Y axis of the horizontal bar chart. Hover and callout features are added for easy readability.
+Next, we work on the function for the charts in the dataset. Using Plotly and D3, we create a Bar Chart which details the number of each bacteria found in a given sample. Using the slice function, we order the top 10 bacteria types in descending order along the Y axis of the horizontal bar chart. Hover and callout features are added for easy readability. Plotly is also used to create a Bubble chart which details the volume of Bacteria cultures per sample. 
 
-
-
+The third function populateData pulls in the metadata and populates the charts. When the final function optionChanged is triggered (aka a sample number is switched), the optionChanged functions updates the data and charts with the respective data for the new sample.
 
